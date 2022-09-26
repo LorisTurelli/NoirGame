@@ -1,0 +1,62 @@
+body {
+    background-color: black;
+    color: gainsboro;
+}
+
+.wrap > div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    margin: auto;
+}
+.choices>li{
+    margin:2em 0;
+}
+
+li:hover,
+h1 {
+    cursor: pointer;
+    color: white;
+}
+li.locked {
+    color: dimgray;
+}
+li.locked:hover {
+    cursor: not-allowed;
+}
+.hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s ease;
+}
+.show {
+    visibility: visible;
+    opacity: 1;
+}
+a {
+    color: deepskyblue;
+    text-decoration: none;
+}
+a:hover {
+    cursor: grab;
+}
+a:active {
+    cursor: grabbing;
+}
+a.taken {
+    color: coral;
+}
+a.taken:hover {
+    cursor: default;
+}
+@keyframes shake {
+    50% {
+        padding: 0 10px;
+    }
+}
+.shake {
+    animation: shake 0.1s ease-out 3;
+}

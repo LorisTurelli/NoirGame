@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Noir Game</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1 onclick="goto('main')">Noir Game</h1>
+        <div class="wrap">
+            <div class="text show" id="main">
+                <ul type="none" class="choices">
+                    <li onclick="newGame()"><h2>Nuova partita</h2></li>
+                    <li onclick="load()" class="locked" id="continue">
+                        <h2>Continua</h2>
+                    </li>
+                </ul>
+            </div>
+            <div class="chapter hide" id="0">
+                <h2>Capitolo mancante</h2>
+                <ol type="A" class="choices">
+                    <li onclick="goback()">Torna indietro</li>
+                </ol>
+            </div>
+
+            <!-- Inizio Capitoli -->
+
+            <div class="chapter hide" id="1">
+                <h2>1.</h2>
+                <p>
+                    17 ottobre 1926, ore 23.12. È una serata piovosa e sei
+                    appena rientrato a casa. Il tuo lavoro di investigatore
+                    privato ti ha dato da mangiare in passato, ma ormai sono
+                    mesi che non ti capita un incarico decente e inizi ad essere
+                    a corto di denaro. Ti accendi una sigaretta, ti butti sul
+                    tuo letto e allenti la cravatta. L'affitto sta per scadere e
+                    ti domandi cosa dirai al padrone di casa quando, tra qualche
+                    giorno, busserà alla tua porta. Mentre pensi a cosa
+                    inventarti, gli occhi ti si fanno pesanti e inizi ad
+                    addormentarti. Proprio mentre stai per sprofondare nel
+                    sonno, il tuo telefono inizia a squillare.
+                </p>
+                <ol type="A" class="choices">
+                    <li onclick="goto(2)">Chi sarà a quest'ora?</li>
+                    <li onclick="goto(3)">
+                        Al diavolo è tardi. Richiameranno domani.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="chapter hide" id="2">
+                <h2>2.</h2>
+                <p>
+                    Rispondi al telefono e una voce maschile ti incalza:
+                    «Parlo con <span class="charName">Stephen Wardell</span>?»
+                </p>
+                <ol type="A" class="choices">
+                    <li onclick="goto(0)">Si, sono io.</li>
+                    <li onclick="goto(0)">No, <span class="charName">Stephen Wardell</span> non è in casa.</li>
+                </ol>
+            </div>
+
+            <div class="chapter hide" id="3">
+                <h2>3.</h2>
+                <p>
+                    Affondi la testa sotto il cuscino, ignorando il telefono che
+                    smette di suonare. In poco tempo ti sei addormentato.
+                </p>
+                <ol type="A" class="choices">
+                    <li onclick="goto(4)">Dormi fino al mattino.</li>
+                </ol>
+            </div>
+
+            <div class="chapter hide" id="4">
+                <h2>4.</h2>
+                <p>
+                    Vieni risvegliato bruscamente dall'incessante bussare alla
+                    tua porta. È un bussare prepotente, di chi esige una
+                    risposta.
+                </p>
+                <ol type="A" class="choices">
+                    <li onclick="goto(0)">Ti alzi e vai alla porta.</li>
+                    <li onclick="goto(0)">Resti a letto.</li>
+                </ol>
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Noir Game</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1 onclick="goto('main')">Noir Game</h1>
+        <div class="wrap">
+            <div class="text show" id="main">
+                <ul type="none" class="choices">
+                    <li onclick="newGame()"><h2>Nuova partita</h2></li>
+                    <li onclick="load()" class="locked" id="continue"><h2>Continua</h2></li>
+                </ul>
+            </div>
+
+            <!-- Inizio Capitoli -->
+
+            <div class="text hide" id="1">
+                <h2>1.</h2>
+                <p>
+                    Trovi una <a href="#" id="chiave" onclick="addItem('chiave')">chiave</a> 
+                </p>
+                <ol type="A" class="choices">
+                    <li onclick="goto(2)">Prosegui</li>
+                </ol>
+            </div>
+
+            <div class="text hide" id="2">
+                <h2>2.</h2>
+                <p>
+                    C'è una porta chiusa
+                </p>
+                <ol type="A" class="choices">
+                    <li onclick="goto(1)">Torna indietro</li>
+                    <li id="use-chiave" onclick="useItem('chiave',false,3)">Usa la chiave per aprire la porta</li>
+                </ol>
+            </div>
+            
+            <div class="text hide" id="3">
+                <h2>3.</h2>
+                <p>
+                    Hai aperto la porta
+                </p>
+                <ol type="A" class="choices">
+                    <li onclick="goto(1)">trova la chiave</li>
+                    <li onclick="goto(2)">torna alla porta</li>
+                    <li onclick="goto(3)">ti trovi qui</li>
+                </ol>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
